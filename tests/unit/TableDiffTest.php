@@ -21,10 +21,10 @@ class TableDiffTest extends Orchestra\Testbench\TestCase
 
         $this->loadMigrationsFrom([
             '--database' => 'testing',
-            '--realpath' => realpath(__DIR__ . '/migrations'),
+            '--realpath' => realpath(__DIR__ . '/../migrations'),
         ]);
 
-        $this->withFactories(__DIR__.'/factories');
+        $this->withFactories(__DIR__ . '/../factories');
 
         $this->addRecords();
     }

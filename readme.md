@@ -159,4 +159,12 @@ $diff->eventPayload(['user' => 'John Doe']);
 
 That is perfect when need to do some actions after merging like store it in db, send notification, etc..
 
-   
+#### Tests
+
+In order to execute the tests you will need an empty MySQL database called testing and a user with no password called testing.
+
+Then execute `php ./vendor/bin/phpunit` on the root path.
+
+#### TODO
+
+* Add stress tests in order to improve the efficiency of this library.
