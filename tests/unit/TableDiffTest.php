@@ -56,7 +56,6 @@ class TableDiffTest extends Orchestra\Testbench\TestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-
         $app['config']->set('database.default', 'testing');
     }
 

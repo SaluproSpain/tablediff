@@ -417,7 +417,7 @@ class TableDiff
      * @param callable $callback
      * @param callable $preCallback
      */
-    private function updateBaseTable($callback = null,$preCallback = null)
+    private function updateBaseTable($postUpdateCallback = null, $preUpdateCallback = null)
     {
         foreach ($this->mergeCollection as $key => $item) {
             $query = DB::table($this->baseTable);
@@ -440,21 +440,26 @@ class TableDiff
                 $item = $newItem;
             }
 
-            if(is_callable($preCallback))
-                $preCallback($item);
+            if(is_callable($preUpdateCallback)) {
+                $preUpdateCallback($item);
+            }
 
+            $id = uniqid();
+            \Log::info('['.$id.'] '.json_encode(get_object_vars($item)).' Memory -> '.(memory_get_peak_usage(true)/1024/1024).'MB');
             $updated = $query->update(get_object_vars($item));
 
             if($updated)
             {
+                \Log::info('['.$id.'] Updated');
                 $this->report->addUpdatedRecords($updated);
 
                 $collection = $query->get();
 
-                if(is_callable($callback))
-                    $callback($collection,$item);
+                if(is_callable($postUpdateCallback)) {
+                    $postUpdateCallback($collection, $item);
+                }
 
-            }else{
+            } else {
 
                 //Remove from the report those values that haven't been updated
 
