@@ -1,22 +1,33 @@
 {
-    "name": "salupro/tablediff",
-    "description": "Comparing DB tables data for Laravel",
-    "keywords": ["tableDiff","laravel","package","differences"],
-    "license": "MIT",
-    "require": {
-        "illuminate/support": "^5.3",
-        "illuminate/database": "^5.3"
-    },
-    "require-dev": {
-      "phpunit/phpunit": "~4.8",
-        "orchestra/testbench": "^3.0",
-        "orchestra/database": "^3.0"
-    },
-    "autoload": {
-      "psr-4": {
-        "Edujugon\\TableDiff\\": "src/",
-        "Edujugon\\TableDiffTest\\": "tests/"
-      }
-    },
-    "minimum-stability": "dev"
+  "name": "edujugon/tablediff",
+  "description": "Comparing DB tables data for Laravel",
+  "keywords": [
+    "tableDiff",
+    "laravel",
+    "package",
+    "differences"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Eduardo Marcos",
+      "email": "edujugon@gmail.com"
+    }
+  ],
+  "require": {
+    "illuminate/support": "^5.3",
+    "illuminate/database": "^5.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.8",
+    "orchestra/testbench": "^3.0",
+    "orchestra/database": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Edujugon\\TableDiff\\": "src/",
+      "Edujugon\\TableDiffTest\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev"
 }
