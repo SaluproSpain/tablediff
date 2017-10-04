@@ -4,8 +4,8 @@
     "keywords": ["tableDiff","laravel","package","differences"],
     "license": "MIT",
     "require": {
-        "illuminate/support": "^5.1",
-        "illuminate/database": "^5.1"
+        "illuminate/support": "^5.3",
+        "illuminate/database": "^5.3"
     },
     "require-dev": {
       "phpunit/phpunit": "~4.8",
